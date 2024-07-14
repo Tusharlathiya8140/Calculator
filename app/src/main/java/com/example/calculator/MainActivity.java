@@ -1,0 +1,116 @@
+package com.example.calculator;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.button.MaterialButton;
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Scriptable;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    TextView solution_tv,result_tv;
+    ImageView history,ac;
+    MaterialButton c,openbreket,closebreket,divition,multiply,sub,dot,add,modulo,equal;
+    MaterialButton num_1,num_2,num_3,num_4,num_5,num_6,num_7,num_8,num_9,num_0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        solution_tv = findViewById(R.id.solution_tv);
+        result_tv = findViewById(R.id.result_tv);
+        history = findViewById(R.id.history);
+        ac = findViewById(R.id.ac);
+
+        assignId(c,R.id.c);
+        assignId(openbreket,R.id.openbreket);
+        assignId(closebreket,R.id.closebreket);
+        assignId(divition,R.id.divition);
+        assignId(multiply,R.id.multiply);
+        assignId(sub,R.id.sub);
+        assignId(dot,R.id.dot);
+        assignId(add,R.id.add);
+        assignId(modulo,R.id.modulo);
+        assignId(equal,R.id.equal);
+        assignId(num_0,R.id.num_0);
+        assignId(num_1,R.id.num_1);
+        assignId(num_2,R.id.num_2);
+        assignId(num_3,R.id.num_3);
+        assignId(num_4,R.id.num_4);
+        assignId(num_5,R.id.num_5);
+        assignId(num_6,R.id.num_6);
+        assignId(num_7,R.id.num_7);
+        assignId(num_8,R.id.num_8);
+        assignId(num_9,R.id.num_9);
+
+        ac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s = solution_tv.getText().toString();
+                if(s.isEmpty()){
+                    solution_tv.setText("");
+                }else {
+                    s = s.substring(0, s.length()-1);
+                    solution_tv.setText(s);
+                }
+            }
+        });
+
+    }
+
+    void assignId(MaterialButton btn, int id){
+        btn = findViewById(id);
+        btn.setOnClickListener(this);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+
+        MaterialButton button =(MaterialButton) v;
+        String buttonText = button.getText().toString();
+        String dataToCalculate = solution_tv.getText().toString();
+
+        if(buttonText.equals("=")){
+            solution_tv.setText(result_tv.getText());
+            result_tv.setText("");
+            return;
+        }
+        if(buttonText.equals("C")){
+            solution_tv.setText("");
+            result_tv.setText("0");
+            return;
+        }
+        else {
+            dataToCalculate = dataToCalculate+buttonText;
+        }
+
+        solution_tv.setText(dataToCalculate);
+
+        String finalResult = getresult(dataToCalculate);
+        if(!finalResult.equals("Error")){
+            result_tv.setText(finalResult);
+        }
+    }
+
+    String getresult(String data){
+        try{
+            Context context = Context.enter();
+            context.setOptimizationLevel(-1);
+            Scriptable scriptable = context.initSafeStandardObjects();
+            String finalresult = context.evaluateString(scriptable,data,"Javascript",1,null).toString();
+            if(finalresult.endsWith(".0")){
+                finalresult = finalresult.replace(".0","");
+            }
+            return finalresult;
+        }catch (Exception e){
+            return "Error";
+        }
+    }
+
+
+}

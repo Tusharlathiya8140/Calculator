@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/bg_style"
+    tools:context=".MainActivity">
+
+    <TextView
+        style="@style/text"
+        android:id="@+id/solution_tv"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:textSize="@dimen/_35sdp" />
+
+    <TextView
+        style="@style/text"
+        android:id="@+id/result_tv"
+        android:text="0"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textSize="@dimen/_25sdp" />
+
+    <FrameLayout
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/history"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/history"/>
+
+        <ImageView
+            android:id="@+id/ac"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_gravity="center_vertical|end"
+            android:background="@drawable/delete" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_3sdp"
+            android:background="@color/black"
+            android:layout_gravity="center_vertical|bottom" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gray">
+
+        <LinearLayout
+            style="@style/layout">
+
+            <Button
+                android:id="@+id/c"
+                android:text="C"
+                style="@style/num_button"
+                android:textColor="@color/red" />
+
+            <Button
+                android:id="@+id/openbreket"
+                android:text="("
+                style="@style/num_button"
+                android:textColor="@color/green" />
+
+            <Button
+                android:id="@+id/closebreket"
+                android:text=")"
+                style="@style/num_button"
+                android:textColor="@color/green" />
+
+            <Button
+                android:id="@+id/divition"
+                android:text="/"
+                style="@style/num_button"
+                android:textColor="@color/green" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/layout">
+            <Button
+                android:id="@+id/num_7"
+                android:text="7"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/num_8"
+                android:text="8"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/num_9"
+                android:text="9"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/multiply"
+                android:text="*"
+                style="@style/num_button"
+                android:textColor="@color/green" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/layout">
+            <Button
+                android:id="@+id/num_4"
+                android:text="4"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/num_5"
+                android:text="5"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/num_6"
+                android:text="6"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/sub"
+                android:text="-"
+                style="@style/num_button"
+                android:textColor="@color/green" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/layout">
+            <Button
+                android:id="@+id/num_1"
+                android:text="1"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/num_2"
+                android:text="2"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/num_3"
+                android:text="3"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/add"
+                android:text="+"
+                style="@style/num_button"
+                android:textColor="@color/green" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/layout">
+            <Button
+                android:id="@+id/equal"
+                android:text="="
+                style="@style/num_button"
+                android:background="@drawable/custombutton2"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/num_0"
+                android:text="0"
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/dot"
+                android:text="."
+                style="@style/num_button"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/modulo"
+                android:text="%"
+                style="@style/num_button"
+                android:textColor="@color/green" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
