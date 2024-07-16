@@ -58,25 +58,25 @@
                 android:id="@+id/c"
                 android:text="C"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:textColor="@color/dark_gray" />
 
             <Button
                 android:id="@+id/openbreket"
                 android:text="("
                 style="@style/num_button"
-                android:textColor="@color/green" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/closebreket"
                 android:text=")"
                 style="@style/num_button"
-                android:textColor="@color/green" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/divition"
                 android:text="/"
                 style="@style/num_button"
-                android:textColor="@color/green" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -101,7 +101,7 @@
                 android:id="@+id/multiply"
                 android:text="*"
                 style="@style/num_button"
-                android:textColor="@color/green" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
@@ -125,7 +125,7 @@
                 android:id="@+id/sub"
                 android:text="-"
                 style="@style/num_button"
-                android:textColor="@color/green" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
@@ -149,7 +149,7 @@
                 android:id="@+id/add"
                 android:text="+"
                 style="@style/num_button"
-                android:textColor="@color/green" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
@@ -174,7 +174,7 @@
                 android:id="@+id/modulo"
                 android:text="%"
                 style="@style/num_button"
-                android:textColor="@color/green" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
 
