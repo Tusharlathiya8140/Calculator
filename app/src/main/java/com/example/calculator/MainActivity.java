@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         assignId(num_8,R.id.num_8);
         assignId(num_9,R.id.num_9);
 
+
         ac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn = findViewById(id);
         btn.setOnClickListener(this);
     }
+
 
 
     @Override
@@ -111,6 +113,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return "Error";
         }
     }
-
-
 }
