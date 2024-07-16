@@ -6,5 +6,7 @@
     <color name="pink">#f4e4f7</color>
     <color name="green">#227d52</color>
     <color name="red">#FF0000</color>
-    <color name="gray">#bfbdbd</color>
+    <color name="gray">#A5A5A5</color>
+    <color name="orange">#FE9504</color>
+    <color name="dark_gray">#333333</color>
 </resources>
