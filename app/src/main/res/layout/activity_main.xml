@@ -26,22 +26,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/history"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/history"/>
 
         <ImageView
             android:id="@+id/ac"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:layout_gravity="center_vertical|end"
             android:background="@drawable/delete" />
-
 
     </FrameLayout>
 
@@ -57,25 +49,29 @@
             <Button
                 android:id="@+id/c"
                 android:text="C"
+                android:background="@drawable/custombutton"
                 style="@style/num_button"
                 android:textColor="@color/dark_gray" />
 
             <Button
-                android:id="@+id/openbreket"
-                android:text="("
+                android:id="@+id/negative"
+                android:text="+/-"
                 style="@style/num_button"
-                android:textColor="@color/white" />
+                android:background="@drawable/custombutton"
+                android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/closebreket"
-                android:text=")"
+                android:id="@+id/modulo"
+                android:text="%"
                 style="@style/num_button"
-                android:textColor="@color/white" />
+                android:background="@drawable/custombutton"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/divition"
                 android:text="/"
                 style="@style/num_button"
+                android:background="@drawable/custombutton2"
                 android:textColor="@color/white" />
 
         </LinearLayout>
@@ -86,21 +82,25 @@
                 android:id="@+id/num_7"
                 android:text="7"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:background="@drawable/custombutton3"
+                android:textColor="@color/white" />
             <Button
                 android:id="@+id/num_8"
                 android:text="8"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:background="@drawable/custombutton3"
+                android:textColor="@color/white" />
             <Button
                 android:id="@+id/num_9"
                 android:text="9"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:background="@drawable/custombutton3"
+                android:textColor="@color/white" />
             <Button
                 android:id="@+id/multiply"
                 android:text="*"
                 style="@style/num_button"
+                android:background="@drawable/custombutton2"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -110,21 +110,25 @@
                 android:id="@+id/num_4"
                 android:text="4"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:background="@drawable/custombutton3"
+                android:textColor="@color/white" />
             <Button
                 android:id="@+id/num_5"
                 android:text="5"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:background="@drawable/custombutton3"
+                android:textColor="@color/white" />
             <Button
                 android:id="@+id/num_6"
                 android:text="6"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:background="@drawable/custombutton3"
+                android:textColor="@color/white" />
             <Button
                 android:id="@+id/sub"
                 android:text="-"
                 style="@style/num_button"
+                android:background="@drawable/custombutton2"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -134,47 +138,57 @@
                 android:id="@+id/num_1"
                 android:text="1"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:background="@drawable/custombutton3"
+                android:textColor="@color/white" />
             <Button
                 android:id="@+id/num_2"
                 android:text="2"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:background="@drawable/custombutton3"
+                android:textColor="@color/white" />
             <Button
                 android:id="@+id/num_3"
                 android:text="3"
                 style="@style/num_button"
-                android:textColor="@color/black" />
+                android:background="@drawable/custombutton3"
+                android:textColor="@color/white" />
             <Button
                 android:id="@+id/add"
                 android:text="+"
                 style="@style/num_button"
+                android:background="@drawable/custombutton2"
                 android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
             style="@style/layout">
-            <Button
-                android:id="@+id/equal"
-                android:text="="
-                style="@style/num_button"
-                android:background="@drawable/custombutton2"
-                android:textColor="@color/white" />
-            <Button
-                android:id="@+id/num_0"
-                android:text="0"
-                style="@style/num_button"
-                android:textColor="@color/black" />
-            <Button
-                android:id="@+id/dot"
-                android:text="."
-                style="@style/num_button"
-                android:textColor="@color/black" />
-            <Button
-                android:id="@+id/modulo"
-                android:text="%"
-                style="@style/num_button"
-                android:textColor="@color/white" />
+
+            <LinearLayout
+                style="@style/layout2">
+
+                <Button
+                    android:id="@+id/num_0"
+                    android:text="0"
+                    style="@style/num_button2"
+                    android:background="@drawable/custombutton4"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/layout2">
+                <Button
+                    android:id="@+id/dot"
+                    android:text="."
+                    style="@style/num_button"
+                    android:background="@drawable/custombutton3"
+                    android:textColor="@color/white" />
+                <Button
+                    android:id="@+id/equal"
+                    android:text="="
+                    style="@style/num_button"
+                    android:background="@drawable/custombutton2"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
         </LinearLayout>
 
 

@@ -12,8 +12,8 @@ import org.mozilla.javascript.Scriptable;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView solution_tv,result_tv;
-    ImageView history,ac;
-    MaterialButton c,openbreket,closebreket,divition,multiply,sub,dot,add,modulo,equal;
+    ImageView ac;
+    MaterialButton c,divition,negative,multiply,sub,dot,add,modulo,equal;
     MaterialButton num_1,num_2,num_3,num_4,num_5,num_6,num_7,num_8,num_9,num_0;
 
     @Override
@@ -23,12 +23,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         solution_tv = findViewById(R.id.solution_tv);
         result_tv = findViewById(R.id.result_tv);
-        history = findViewById(R.id.history);
         ac = findViewById(R.id.ac);
 
         assignId(c,R.id.c);
-        assignId(openbreket,R.id.openbreket);
-        assignId(closebreket,R.id.closebreket);
+        assignId(negative,R.id.negative);
         assignId(divition,R.id.divition);
         assignId(multiply,R.id.multiply);
         assignId(sub,R.id.sub);
@@ -85,6 +83,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(buttonText.equals("C")){
             solution_tv.setText("");
             result_tv.setText("0");
+            return;
+        }
+        if(buttonText.equals("+/-")){
+            solution_tv.setText("-"+dataToCalculate);
             return;
         }
         else {
