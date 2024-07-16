@@ -9,11 +9,12 @@ import com.google.android.material.button.MaterialButton;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView solution_tv,result_tv;
-    ImageView ac;
-    MaterialButton c,divition,negative,multiply,sub,dot,add,modulo,equal;
+    MaterialButton c,divition,negative,multiply,sub,dot,add,modulo,equal,ac;
     MaterialButton num_1,num_2,num_3,num_4,num_5,num_6,num_7,num_8,num_9,num_0;
 
     @Override
@@ -23,8 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         solution_tv = findViewById(R.id.solution_tv);
         result_tv = findViewById(R.id.result_tv);
-        ac = findViewById(R.id.ac);
 
+        assignId(ac,R.id.ac);
         assignId(c,R.id.c);
         assignId(negative,R.id.negative);
         assignId(divition,R.id.divition);
@@ -46,19 +47,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         assignId(num_9,R.id.num_9);
 
 
-        ac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String s = solution_tv.getText().toString();
-                if(s.isEmpty()){
-                    solution_tv.setText("");
-                }else {
-                    s = s.substring(0, s.length()-1);
-                    solution_tv.setText(s);
-                }
-            }
-        });
-
     }
 
     void assignId(MaterialButton btn, int id){
@@ -75,12 +63,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String buttonText = button.getText().toString();
         String dataToCalculate = solution_tv.getText().toString();
 
+
+
+
         if(buttonText.equals("=")){
             solution_tv.setText(result_tv.getText());
             result_tv.setText("");
             return;
         }
-        if(buttonText.equals("C")){
+        if(buttonText.equals("AC")){
             solution_tv.setText("");
             result_tv.setText("0");
             return;
@@ -89,9 +80,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             solution_tv.setText("-"+dataToCalculate);
             return;
         }
-        else {
-            dataToCalculate = dataToCalculate+buttonText;
+        if(buttonText.equals("C")){
+            if (dataToCalculate.isEmpty()){
+                result_tv.setText("0");
+                return;
+            }else {
+                dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
+            }
         }
+        else if(buttonText.equals("0")){
+            int i = dataToCalculate.length();
+
+            if(dataToCalculate.isEmpty()){
+                solution_tv.setText("");
+                result_tv.setText("0");
+            } else if (String.valueOf(dataToCalculate.charAt(i-1)).equals("+")||String.valueOf(dataToCalculate.charAt(i-1)).equals("-")||String.valueOf(dataToCalculate.charAt(i-1)).equals("*")||String.valueOf(dataToCalculate.charAt(i-1)).equals("/")||String.valueOf(dataToCalculate.charAt(i-1)).equals("%")) {
+                solution_tv.setText(dataToCalculate);
+            } else {
+                dataToCalculate = dataToCalculate+buttonText;
+            }
+        }
+        else {
+                dataToCalculate = dataToCalculate+buttonText;
+        }
+
 
         solution_tv.setText(dataToCalculate);
 

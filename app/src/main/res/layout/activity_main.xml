@@ -21,21 +21,7 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:textSize="@dimen/_25sdp" />
 
-    <FrameLayout
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-
-        <ImageView
-            android:id="@+id/ac"
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:layout_gravity="center_vertical|end"
-            android:background="@drawable/delete" />
-
-    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,9 +29,18 @@
         android:orientation="vertical"
         android:background="@color/black">
 
-        <LinearLayout
-            style="@style/layout">
 
+
+        <LinearLayout
+            style="@style/layout"
+            android:layout_marginTop="@dimen/_50sdp">
+
+            <Button
+                android:id="@+id/ac"
+                android:text="AC"
+                style="@style/num_button"
+                android:background="@drawable/custombutton"
+                android:textColor="@color/black" />
             <Button
                 android:id="@+id/c"
                 android:text="C"
@@ -53,12 +48,6 @@
                 style="@style/num_button"
                 android:textColor="@color/dark_gray" />
 
-            <Button
-                android:id="@+id/negative"
-                android:text="+/-"
-                style="@style/num_button"
-                android:background="@drawable/custombutton"
-                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/modulo"
@@ -163,18 +152,20 @@
         <LinearLayout
             style="@style/layout">
 
-            <LinearLayout
-                style="@style/layout2">
+                <Button
+                    android:id="@+id/negative"
+                    android:text="+/-"
+                    style="@style/num_button"
+                    android:background="@drawable/custombutton"
+                    android:textColor="@color/black" />
 
                 <Button
                     android:id="@+id/num_0"
                     android:text="0"
-                    style="@style/num_button2"
+                    style="@style/num_button"
                     android:background="@drawable/custombutton4"
                     android:textColor="@color/white" />
-            </LinearLayout>
-            <LinearLayout
-                style="@style/layout2">
+
                 <Button
                     android:id="@+id/dot"
                     android:text="."
@@ -187,7 +178,7 @@
                     style="@style/num_button"
                     android:background="@drawable/custombutton2"
                     android:textColor="@color/white" />
-            </LinearLayout>
+
 
         </LinearLayout>
 

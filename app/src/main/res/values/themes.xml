@@ -3,6 +3,7 @@
     <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/black</item>
     </style>
 
     <style name="Theme.Calculator" parent="Base.Theme.Calculator" />
@@ -42,6 +43,7 @@
         <item name="android:padding">@dimen/_10sdp</item>
         <item name="android:gravity">center</item>
     </style>
+
 
     <style name="layout">
         <item name="android:layout_width">match_parent</item>
